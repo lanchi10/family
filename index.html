@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דשבורד קליני: IRIScan Visualizer 7 בריפוי בעיסוק ובספקטרום האוטיסטי (ASD)</title>
+  <meta name="description" content="דשבורד טיפולי ויזואלי למרפאות בעיסוק: שימושים, יתרונות, מטרות IEP וסימולטור קליני של IRIScan Visualizer 7 לילדים על הרצף האוטיסטי.">
+  
+  <!-- Google Fonts: Heebo & Rubik for clean Hebrew Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement / System Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span class="badge badge-teal">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        מדריך קליני שימושי למרפאות בעיסוק
+      </span>
+      <span>טכנולוגיה מסייעת מתקדמת: IRIScan Visualizer 7 Dyslexia | 4K 13MP</span>
+      <button id="quickPrintBtn" class="btn btn-sm btn-ghost">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        הדפסת תמצית קלינית
+      </button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <div>
+          <h1>דשבורד טיפולי: IRIScan Visualizer 7</h1>
+          <p class="subtitle">שילוב מצלמת מסמכים וטכנולוגיית סריקה והקראה בטיפולי ריפוי בעיסוק לילדים על הרצף האוטיסטי (ASD)</p>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Summary -->
+      <div class="header-stats">
+        <div class="stat-card">
+          <span class="stat-value">6</span>
+          <span class="stat-label">תחומי טיפול מרכזיים</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">4K</span>
+          <span class="stat-label">תצוגה צלולה ומניעת הצפה</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">A3</span>
+          <span class="stat-label">משטח עבודה רחב</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">הנגשה חזותית וקולית</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="sticky-nav">
+    <div class="container nav-container">
+      <ul class="nav-tabs" id="navTabs">
+        <li><a href="#simulator" class="nav-link active" data-tab="simulator">🎥 סימולטור קליני בלייב</a></li>
+        <li><a href="#domains" class="nav-link" data-tab="domains">🧩 6 תחומי הטיפול</a></li>
+        <li><a href="#matrix" class="nav-link" data-tab="matrix">🎯 מטריצת מטרות IEP</a></li>
+        <li><a href="#planner" class="nav-link" data-tab="planner">🛠️ מחולל מערך טיפול</a></li>
+        <li><a href="#cases" class="nav-link" data-tab="cases">📖 תיאורי מקרה קליניים</a></li>
+        <li><a href="#specs" class="nav-link" data-tab="specs">⚙️ מפרט טכני לריפוי בעיסוק</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content Layout -->
+  <main class="container main-content">
+
+    <!-- Section 1: Live Interactive OT Visualizer Simulator -->
+    <section id="simulator" class="dashboard-section section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">כלי אינטראקטיבי</span>
+          <h2>סימולטור קליני בלייב: כך המכשיר עובד בחדר הטיפולים</h2>
+          <p>בחרי מצב עבודה טיפולי והתאימי את ההגדרות החזותיות והקוליות בזמן אמת כדי לראות כיצד המכשיר מפחית עומס תחושתי ומגביר עצמאות.</p>
+        </div>
+        <div class="simulator-mode-buttons" id="modeSelector">
+          <button class="mode-btn active" data-mode="reading">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            1. מיקוד קשבי והקראה (TTS)
+          </button>
+          <button class="mode-btn" data-mode="motorskills">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
+            2. תכנון תנועה ומוטוריקה עדינה
+          </button>
+          <button class="mode-btn" data-mode="sensory">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            3. ויסות תחושתי ותאורה
+          </button>
+          <button class="mode-btn" data-mode="broad">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+            4. משטחי A3 וסמלי תקשורת
+          </button>
+        </div>
+      </div>
+
+      <div class="simulator-grid">
+        <!-- Viewfinder Panel -->
+        <div class="viewfinder-container">
+          <div class="viewfinder-header">
+            <span class="live-indicator"><span class="pulse-dot"></span> תצוגת מצלמה בזמן אמת (4K 13MP Visualizer)</span>
+            <span id="currentModeTitle" class="mode-badge">מצב: מיקוד קשבי והקראה</span>
+          </div>
+
+          <div class="viewfinder-screen" id="simScreen">
+            <!-- Overlay Masking Line Guide -->
+            <div id="simLineGuide" class="line-guide" style="top: 35%; display: block;">
+              <span class="guide-label">סרגל מיקוד חזותי</span>
+            </div>
+
+            <!-- Content Area inside Viewfinder -->
+            <div id="simContent" class="sim-document-text filter-normal">
+              <div class="doc-header">
+                <h3>דף משימה טיפולי: מבוך צורות ומיקוד קריאה</h3>
+                <span class="doc-meta">מטרת הטיפול: שיפור הפרדת טפל מעיקר ותכנון מוטורי</span>
+              </div>
+              
+              <div id="readingParagraph" class="reading-sample">
+                <span class="word" data-idx="0">כאשר</span>
+                <span class="word" data-idx="1">הילד</span>
+                <span class="word" data-idx="2">מניח</span>
+                <span class="word" data-idx="3">את</span>
+                <span class="word" data-idx="4">דף</span>
+                <span class="word" data-idx="5">העבודה</span>
+                <span class="word" data-idx="6">תחת</span>
+                <span class="word" data-idx="7">מצלמת</span>
+                <span class="word" data-idx="8">ה-IRIScan,</span>
+                <span class="word" data-idx="9">המצלמה</span>
+                <span class="word" data-idx="10">מגדילה</span>
+                <span class="word" data-idx="11">את</span>
+                <span class="word" data-idx="12">הסמלים</span>
+                <span class="word" data-idx="13">ומאפשרת</span>
+                <span class="word" data-idx="14">לו</span>
+                <span class="word" data-idx="15">להתמקד</span>
+                <span class="word" data-idx="16">במשימה</span>
+                <span class="word" data-idx="17">ללא</span>
+                <span class="word" data-idx="18">הצפה</span>
+                <span class="word" data-idx="19">חזותית.</span>
+              </div>
+
+              <!-- Motor / Split Screen Graphic (Shown in motor mode) -->
+              <div id="motorGraphic" class="motor-graphic" style="display: none;">
+                <div class="split-view">
+                  <div class="split-box">
+                    <h4>דגם לייחוס (הקפאת פריים)</h4>
+                    <div class="shape-model">
+                      <svg width="100" height="100" viewBox="0 0 100 100">
+                        <polygon points="50,10 90,90 10,90" fill="none" stroke="#0D9488" stroke-width="4"/>
+                        <circle cx="50" cy="60" r="15" fill="#F59E0B"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="split-box">
+                    <h4>ביצוע הילד בלייב תחת המצלמה</h4>
+                    <div class="hand-simulation">
+                      <svg width="100" height="100" viewBox="0 0 100 100">
+                        <polygon points="50,12 88,88 12,88" fill="none" stroke="#6366F1" stroke-width="3" stroke-dasharray="4"/>
+                        <circle cx="48" cy="58" r="14" fill="#14B8A6" opacity="0.8"/>
+                      </svg>
+                      <span class="hand-cursor">✍️ כף היד של הילד</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LED Lighting Overlay Visual Effect -->
+            <div id="ledOverlay" class="led-overlay led-level-2"></div>
+          </div>
+
+          <div class="viewfinder-footer">
+            <div class="speech-controls">
+              <button id="speakBtn" class="btn btn-primary">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                השמעת הקראה קולית (TTS בעברית)
+              </button>
+              <button id="stopSpeakBtn" class="btn btn-secondary" disabled>עצור הקראה</button>
+            </div>
+            <div class="tts-speed-wrap">
+              <label for="ttsRate">קצב הקראה:</label>
+              <input type="range" id="ttsRate" min="0.5" max="1.5" step="0.1" value="0.9">
+              <span id="rateVal">0.9x</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Side Panel -->
+        <div class="controls-panel">
+          <h3>🎛️ בקרות התאמה טיפולית ורגישות תחושתית</h3>
+          <p class="panel-desc">כוונני את הפרמטרים בהתאם לפרופיל התחושתי והקשבי של המטופל:</p>
+
+          <div class="control-group">
+            <label for="contrastFilter">🎨 פילטר ניגודיות חזותית (Visual Contrast):</label>
+            <select id="contrastFilter" class="form-control">
+              <option value="filter-normal">רגיל (צבע מלא ברזולוציית 4K)</option>
+              <option value="filter-high-contrast">ניגודיות גבוהה: צהוב על שחור (הפחתת סינוור)</option>
+              <option value="filter-soft-green">רקע ירוק מרגיע (ויסות קורטיקלי)</option>
+              <option value="filter-grayscale">שחור-לבן מטוהר (צמצום גירויים מיותרים)</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="ledSlider">💡 עוצמת תאורת LED ניטרלית (ללא ריצוד flicker-free):</label>
+            <input type="range" id="ledSlider" min="0" max="3" step="1" value="2">
+            <div class="range-labels">
+              <span>כבוי</span>
+              <span>רכה</span>
+              <span>בינונית</span>
+              <span>חזקה</span>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="zoomSlider">🔍 דרגת הגדלה (Magnification & Focus):</label>
+            <input type="range" id="zoomSlider" min="100" max="250" step="10" value="120">
+            <div class="range-val-display"><span id="zoomVal">120%</span> הגדלה</div>
+          </div>
+
+          <div class="control-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="toggleLineGuide" checked>
+              <span>סרגל מיקוד חזותי (Visual Masking / Line Anchor)</span>
+            </label>
+          </div>
+
+          <div class="ot-tip-box">
+            <div class="tip-header">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <strong>טיפ מרפאה בעיסוק:</strong>
+            </div>
+            <p id="otTipText">לילדים עם רגישות חזותית על הרצף, מומלץ להשתמש בפיקוד ניגודיות "צהוב על שחור" עם תאורת LED רכה (רמה 1) להפחתת עומס תחושתי בעין ושיפור השהייה במשימה.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 6 Core Therapeutic Domains Grid -->
+    <section id="domains" class="dashboard-section">
+      <div class="section-header">
+        <span class="section-tag">יישום טיפולי</span>
+        <h2>6 תחומי הטיפול המרכזיים בשימוש ב-IRIScan Visualizer 7</h2>
+        <p>לחצי על כל תחום טיפולי כדי לגלות את הטכניקות הטיפוליות, היתרונות והאפשרויות הייחודיות לילדים אוטיסטים ועל הרצף.</p>
+      </div>
+
+      <div class="domains-grid">
+        
+        <!-- Card 1 -->
+        <div class="domain-card" data-domain="executive">
+          <div class="domain-icon bg-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"/><path d="M6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"/><rect x="9" y="8" width="6" height="8" rx="1"/></svg>
+          </div>
+          <h3>1. תפקודים ניהוליים ומיקוד קשבי</h3>
+          <p class="domain-desc">פירוק משימות מורכבות לשלבים (Chunking), הגדלת הוראות בודדות ומניעת הצפה חזותית של הדף השלם.</p>
+          <ul class="domain-highlights">
+            <li>סרגל מיקוד דיגיטלי להסתרת מסיחים</li>
+            <li>הקפאת פריים (Freeze Frame) להתארגנות</li>
+            <li>הגדלת טקסט והוראות בודדות בצורה הדרגתית</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="domain-card" data-domain="sensory">
+          <div class="domain-icon bg-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <h3>2. ויסות תחושתי חזותי ומגע</h3>
+          <p class="domain-desc">פתרון לילדים עם רגישות למגע בנייר (Sensory Avoidance) או צורך בתאורת LED ניטרלית ללא ריצוד.</p>
+          <ul class="domain-highlights">
+            <li>שיקוף הנייר למסך מחשב מוגן</li>
+            <li>שליטה מלאה בתאורה ללא Flicker</li>
+            <li>החלפת צבעי רקע להפחתת עומס קורטיקלי</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="domain-card" data-domain="motor">
+          <div class="domain-icon bg-indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
+          </div>
+          <h3>3. תכנון תנועה ומוטוריקה עדינה</h3>
+          <p class="domain-desc">תצוגת מסך מפוצל (Split-screen) המאפשרת לילד לראות דגם בצד אחד ולבצע תרגול מוטורי בצד השני.</p>
+          <ul class="domain-highlights">
+            <li>מעקב חזותי בזמן אמת על אחיזת עיפרון</li>
+            <li>משחק מראה (Mirroring) ומשוב מיידי</li>
+            <li>הסרטת שלבי יצירה/בנייה לניתוח טיפולי</li>
+          </ul>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="domain-card" data-domain="aac">
+          <div class="domain-icon bg-emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>4. תקשורת תומכת וחלופית (תמ"ח)</h3>
+          <p class="domain-desc">הגדלת סמלי תקשורת (PECS), הפיכת לוחות מודפסים למשטחים דיגיטליים מוקראים בלחיצה אחת.</p>
+          <ul class="domain-highlights">
+            <li>משטח סריקה A3 רחב ללוחות תקשורת מוגדלים</li>
+            <li>המרה מודפסת לקול מיידי (Readiris DYS)</li>
+            <li>סריקת משחקי קלפים ותמונות תקשורת</li>
+          </ul>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="domain-card" data-domain="dyslexia">
+          <div class="domain-icon bg-rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>5. הנגשת דיסלקציה וטקסט (DYS OCR/TTS)</h3>
+          <p class="domain-desc">תוכנת Readiris DYS מובנית המקריאה טקסטים מוקלטים/מודפסים ומבליטה מילים בקצב מותאם אישית.</p>
+          <ul class="domain-highlights">
+            <li>תמיכה מלאה בפונטים מותאמים לדיסלקציה</li>
+            <li>הקראה קולית ברורה (TTS) בעברית ואנגלית</li>
+            <li>ייצוא קבצים לפורמטי MP3 / Word מונגשים</li>
+          </ul>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="domain-card" data-domain="classroom">
+          <div class="domain-icon bg-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>6. שילוב בכיתה ולמידה מרחוק</h3>
+          <p class="domain-desc">שידור ישיר ל-Zoom/Teams, שיתוף לוח עבודה מונגש עם הצוות החינוכי וההורים לצורך רצף טיפולי.</p>
+          <ul class="domain-highlights">
+            <li>מכשיר נייד ומתקפל במשקל קל</li>
+            <li>חיבור Plug & Play מהיר ב-USB</li>
+            <li>שיתוף מסך בלייב במפגשי הדרכת הורים</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Clinical Goals & IEP Matrix -->
+    <section id="matrix" class="dashboard-section section-card">
+      <div class="section-header">
+        <span class="section-tag">תכנון תוכנית שילוב (IEP)</span>
+        <h2>מטריצת מטרות טיפוליות והתאמת תכונות המכשיר</h2>
+        <p>קשרי בין המטרות הטיפוליות של הילד בתוכנית השילוב האישית לבין הגדרות המצלמה והיישום בחדר הטיפול.</p>
+      </div>
+
+      <div class="matrix-filter-bar">
+        <label>סינון לפי אתגר מרכזי:</label>
+        <button class="filter-chip active" data-filter="all">הכל</button>
+        <button class="filter-chip" data-filter="sensory">ויסות חושית</button>
+        <button class="filter-chip" data-filter="motor">תכנון תנועה ומוטוריקה</button>
+        <button class="filter-chip" data-filter="executive">תפקודים ניהוליים</button>
+        <button class="filter-chip" data-filter="communication">תקשורת ושפה</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="clinical-matrix-table" id="matrixTable">
+          <thead>
+            <tr>
+              <th>תחום אתגר</th>
+              <th>מטרת IEP טיפולית</th>
+              <th>תכונה ייעודית ב-IRIScan Visualizer 7</th>
+              <th>אופן היישום בחדר הטיפול</th>
+              <th>מדד להצלחה טיפולית</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-category="sensory">
+              <td><span class="badge badge-amber">ויסות חושית</span></td>
+              <td><strong>הפחתת הימנעות ממשימות נייר</strong> והערכת גירויים חזותיים בעלי ניגודיות גבוהה.</td>
+              <td>תאורת LED ניטרלית + פילטר ניגודיות "צהוב על שחור"</td>
+              <td>הנחת דף העבודה תחת המצלמה והקרנתו על המסך בצבעים מרגיעים, ללא מגע ישיר במידה ויש הימנעות טקטילית.</td>
+              <td>עלייה ב-40% בזמן ההשתהות במשימה ללא סימני הצפה.</td>
+            </tr>
+            <tr data-category="executive">
+              <td><span class="badge badge-teal">תפקודים ניהוליים</span></td>
+              <td><strong>שיפור הפרדת טפל מעיקר</strong> והתמקדות בהוראה בודדת מתוך דף צפוף.</td>
+              <td>סרגל מיקוד חזותי (Visual Masking) + זום 4K</td>
+              <td>הגדרת זום גבוה המציג רק סעיף אחד בכל עת, תוך טשטוש/הסתרה של שאר חלקי הדף.</td>
+              <td>ביצוע המשימה באופן עצמאי ללא תסכול מתמונות היקפיות.</td>
+            </tr>
+            <tr data-category="motor">
+              <td><span class="badge badge-indigo">תכנון תנועה</span></td>
+              <td><strong>שיפור תכנון גרפומשתני (Graphomotor)</strong> ואחיזת עיפרון נכונה.</td>
+              <td>פיצול מסך (Split-Screen) + 60fps צילום ברור</td>
+              <td>הילד רואה בצד אחד וידאו מוקפא של אחיזה נכונה ובצד השני את היד שלו עובדת בלייב (משחק מראה).</td>
+              <td>תיקון אחיזה עצמאי תוך שימוש במשוב חזותי בזמן אמת.</td>
+            </tr>
+            <tr data-category="communication">
+              <td><span class="badge badge-emerald">תקשורת ושפה</span></td>
+              <td><strong>הגברת עצמאות בהבנת הוראות כתובות</strong> לילדים לא-מילוליים או עם קשיי קריאה.</td>
+              <td>תוכנת Readiris DYS (OCR & TTS) בעברית</td>
+              <td>המצלמה סורקת את הטקסט ומקריאה אותו בקול צלול, תוך הדגשת המילה המוקראת בזמן אמת.</td>
+              <td>מענה נכון על 4 מתוך 5 הוראות ללא תיווך מילולי של המטפלת.</td>
+            </tr>
+            <tr data-category="sensory">
+              <td><span class="badge badge-amber">ויסות חושית</span></td>
+              <td><strong>שיפור סובלנות לגירוי שמעתי/קולי</strong> במהלך קריאה.</td>
+              <td>שליטה בקצב הקראה (0.5x עד 1.5x) + מיקרופון AI מנטרל רעשים</td>
+              <td>התאמת קצב הקראה איטי ורגוע למניעת בהלה מגירויים קוליים פתאומיים.</td>
+              <td>הקשבה רציפה לטקסט מוקרא של 3 דקות ברצף.</td>
+            </tr>
+            <tr data-category="motor">
+              <td><span class="badge badge-indigo">תפיסה מרחבית</span></td>
+              <td><strong>ארגון משטח עבודה רחב</strong> ופתרון מבוכים גדולים.</td>
+              <td>משטח סריקה רחב בגודל A3 (עד 420x297 מ"מ)</td>
+              <td>שימוש במשחקי קלפים ולוחות עבודה גדולים במיוחד הנכנסים במלואם לפריים המצלמה.</td>
+              <td>סריקה חזותית מלאה ממימין לשמאל ומלמעלה למטה.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Interactive OT Session Planner -->
+    <section id="planner" class="dashboard-section section-card">
+      <div class="section-header">
+        <span class="section-tag">כלי עבודה יישומי</span>
+        <h2>🛠️ מחולל מערכי טיפול מותאמים אישית (OT Activity Generator)</h2>
+        <p>בחרי את הפרופיל של המטופל/ת וקבלי מערך טיפול מובנה ל-45 דקות המשלב את המכשיר:</p>
+      </div>
+
+      <div class="planner-form-grid">
+        <div class="form-group">
+          <label for="childAge">👶 קבוצת גיל:</label>
+          <select id="childAge" class="form-control">
+            <option value="preschool">גילאי 3-6 (גיל הרך / גן)</option>
+            <option value="elementary" selected>גילאי 7-11 (בית ספר יסודי)</option>
+            <option value="teens">גילאי 12-18 (חטיבה ותיכון)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="primaryChallenge">🎯 אתגר טיפולי מרכזי:</label>
+          <select id="primaryChallenge" class="form-control">
+            <option value="sensory">ויסות חזותי והימנעות ממגע בנייר</option>
+            <option value="graphomotor" selected>תכנון תנועה, אחיזת עיפרון ומוטוריקה עדינה</option>
+            <option value="executive">תפקודים ניהוליים, ארגון ומיקוד קשבי</option>
+            <option value="reading">הנגשת קריאה וטקסטים (דיסלקציה/ASD)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="asdLevel">🧩 תפקוד בספקטרום (ASD Level):</label>
+          <select id="asdLevel" class="form-control">
+            <option value="high">תפקוד גבוה (צורך בתמיכה ממוקדת)</option>
+            <option value="medium" selected>תפקוד בינוני (צורך בתמיכה משמעותית)</option>
+            <option value="aac">לא-מילולי / צורך בתקשורת תומכת (תמ"ח)</option>
+          </select>
+        </div>
+
+        <div class="form-group btn-align-bottom">
+          <button id="generatePlanBtn" class="btn btn-teal btn-block">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            מחולל מערך טיפול אישי
+          </button>
+        </div>
+      </div>
+
+      <!-- Generated Plan Output Container -->
+      <div id="planResultContainer" class="generated-plan-box" style="display: none;">
+        <div class="plan-header">
+          <h3>📋 מערך טיפול מוצע (45 דקות) - IRIScan Visualizer 7</h3>
+          <button id="printPlanBtn" class="btn btn-sm btn-ghost">🖨️ הדפס מערך זה</button>
+        </div>
+        <div id="planContent" class="plan-body">
+          <!-- Filled by JS dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Clinical Case Studies -->
+    <section id="cases" class="dashboard-section">
+      <div class="section-header">
+        <span class="section-tag">עדויות מן השדה</span>
+        <h2>📖 תיאורי מקרה קליניים (Case Studies)</h2>
+        <p>כיצד שינה IRIScan Visualizer 7 את מהלך הטיפול בריפוי בעיסוק עבור ילדים על הרצף האוטיסטי:</p>
+      </div>
+
+      <div class="cases-grid">
+        <!-- Case 1 -->
+        <div class="case-card">
+          <div class="case-header">
+            <span class="case-avatar">👦</span>
+            <div>
+              <h3>איתי, בן 8</h3>
+              <p class="case-sub">על הרצף האוטיסטי (ASD) + רגישות חזותית ותחושתית</p>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-block before">
+              <strong>תמונת המצב לפני התערבות:</strong>
+              <p>איתי נמנע מעבודה בדפי עבודה מודפסים בגלל רגישות למרקם הנייר וסינוור מתאורת החדר. בכל פעם שהתבקש לכתוב, הגיב בהתנגדות ובתסכול.</p>
+            </div>
+            <div class="case-block after">
+              <strong>התערבות עם IRIScan Visualizer 7:</strong>
+              <p>דף העבודה הונח תחת המצלמה והוקרן על המסך בפילטר "צהוב על שחור" עם תאורת LED ניטרלית. איתי עבד על המסך באמצעות עט מגע ללא הצפה תחושתית.</p>
+            </div>
+            <div class="case-outcome">
+              <strong>תוצאה טיפולית:</strong>
+              <span>עלייה מ-3 דקות עבודה ל-20 דקות עבודה רציפה ועצמאית בשיעור.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-card">
+          <div class="case-header">
+            <span class="case-avatar">👧</span>
+            <div>
+              <h3>מאיה, בת 11</h3>
+              <p class="case-sub">על הרצף האוטיסטי + דיסלקציה וקשיי תכנון מוטורי</p>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-block before">
+              <strong>תמונת המצב לפני התערבות:</strong>
+              <p>קשיים ניכרים בקריאת הוראות מורכבות ובביצוע משימות העתקה מהלוח. הצפה חזותית מטקסט צפוף גרמה לה לוותר מראש.</p>
+            </div>
+            <div class="case-block after">
+              <strong>התערבות עם IRIScan Visualizer 7:</strong>
+              <p>שימוש בתוכנת Readiris DYS המובנית: סריקת הטקסט בלחיצה אחת, הקראה קולית בקצב איטי (0.8x) והדגשת מילים בזמן אמת, בשילוב מסך מפוצל לביצוע ההעתקה.</p>
+            </div>
+            <div class="case-outcome">
+              <strong>תוצאה טיפולית:</strong>
+              <span>מאיה החלה לבצע משימות כתיבה והעתקה באופן עצמאי לחלוטין ללא תסכול.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Technical Specifications for OTs -->
+    <section id="specs" class="dashboard-section section-card">
+      <div class="section-header">
+        <span class="section-tag">מפרט קליני-טכני</span>
+        <h2>⚙️ למה דגם IRIScan Visualizer 7 הוא האידיאלי לחדר הטיפולים?</h2>
+        <p>השוואה בין הדרישות הקליניות של ריפוי בעיסוק לבין המפרט הטכני של המכשיר:</p>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-item">
+          <div class="spec-icon">📷</div>
+          <div class="spec-info">
+            <h4>רזולוציה: 4K UltraHD (13 Megapixels)</h4>
+            <p><strong>יתרון טיפולי:</strong> תמונה צלולה וחדה במיוחד המאפשרת הגדלה משמעותית של פרטים קטנים ללא טשטוש, דבר המפחית מאמץ חזותי אצל ילדים עם קשיי עיבוד חזותי.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon">💡</div>
+          <div class="spec-info">
+            <h4>תאורת LED ניטרלית 4 דרגות (Flicker-Free)</h4>
+            <p><strong>יתרון טיפולי:</strong> מונע לחלוטין את הריצוד (flicker) המאפיין תאורת פלורסנט רגילה, אשר עלול לגרום לגירוי יתר ולהצפה תחושתית אצל ילדים על הרצף.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon">🎙️</div>
+          <div class="spec-info">
+            <h4>מיקרופון מובנה עם סינון רעשים בטכנולוגיית AI</h4>
+            <p><strong>יתרון טיפולי:</strong> מקליט את קולו של הילד ואת תגובותיו בחדר הטיפול תוך סינון רעשי רקע, מעולה לתיעוד טיפולי ולהקלטת משימות קוליות.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon">📐</div>
+          <div class="spec-info">
+            <h4>משטח סריקה רחב A3 וזרוע מתכווננת</h4>
+            <p><strong>יתרון טיפולי:</strong> מאפשר הנחה של משחקי קופסה גדולים, לוחות תקשורת רחבים (PECS) ודפי עבודה מוגדלים בפריים אחד רציף.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon">💻</div>
+          <div class="spec-info">
+            <h4>חבילת תוכנות Readiris DYS מובנית</h4>
+            <p><strong>יתרון טיפולי:</strong> המרת טקסט לקול (TTS), זיהוי תווים אופטי (OCR), סריקה ל-PDF מוקרא ותמיכה בפונטים ייעודיים לדיסלקציה ללא צורך ברישיונות נוספים.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon">🎒</div>
+          <div class="spec-info">
+            <h4>עיצוב נייד, מתקפל וחיבור USB פשוט</h4>
+            <p><strong>יתרון טיפולי:</strong> המכשיר קל משקל, מתקפל בקלות ומתחבר ישיר בלפטופ של המרפאה בעיסוק למעבר מהיר בין חדרי טיפול, גנים ובתי ספר.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>דשבורד קליני מקצועי למרפאות בעיסוק | נבנה עבור הנגשת טכנולוגיה מסייעת בטיפול בילדים על הרצף האוטיסטי (ASD)</p>
+      <p class="footer-sub">מבוסס על מפרט IRIScan Visualizer 7 Dyslexia 4K 13MP | Readiris DYS OCR TTS</p>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="app.js"></script>
+</body>
+</html>
